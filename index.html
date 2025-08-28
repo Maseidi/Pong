@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiplayer Pong</title>
+    <title>Multiplayer Pong - Enhanced</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-color: #000;
+            background: linear-gradient(135deg, #0f0f23, #1a1a2e);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            font-family: Arial, sans-serif;
+            font-family: 'Courier New', monospace;
             color: white;
         }
         
@@ -24,6 +24,7 @@
         canvas {
             border: 2px solid #fff;
             background-color: #000;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
         }
         
         .info {
@@ -34,16 +35,34 @@
         .controls {
             margin-top: 20px;
             font-size: 14px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
         }
         
         .status {
             font-size: 16px;
             margin-bottom: 10px;
+            padding: 10px;
+            background: rgba(0, 255, 0, 0.2);
+            border-radius: 5px;
         }
         
         .score {
             font-size: 24px;
             margin: 10px 0;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+        .control-section {
+            margin: 10px 0;
+        }
+        
+        .control-section h4 {
+            margin: 5px 0;
+            color: #00ff00;
         }
     </style>
 </head>
@@ -53,8 +72,24 @@
         <div class="score" id="score">Player 1: 0 - Player 2: 0</div>
         <canvas id="gameCanvas" width="800" height="600"></canvas>
         <div class="controls">
-            <p>Use W/S keys to move your paddle up/down</p>
-            <p>Share this page with a friend to play together!</p>
+            <div class="control-section">
+                <h4>🎮 Controls</h4>
+                <p><strong>Keyboard:</strong> WASD or Arrow Keys (move in all directions)</p>
+                <p><strong>Mouse:</strong> Move cursor to control paddle position</p>
+                <p><strong>Touch:</strong> Touch and drag on mobile devices</p>
+            </div>
+            <div class="control-section">
+                <h4>🎯 Game Features</h4>
+                <p>• Ball speed increases after each paddle hit!</p>
+                <p>• Move your paddle in X and Y directions</p>
+                <p>• Ball spin affects trajectory based on paddle hit position</p>
+                <p>• Real-time speed indicator</p>
+            </div>
+            <div class="control-section">
+                <h4>🌐 Multiplayer</h4>
+                <p>Share this page URL with a friend to play together!</p>
+                <p>Player 1 (Green) controls left side, Player 2 (Red) controls right side</p>
+            </div>
         </div>
     </div>
 
