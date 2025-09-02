@@ -13,7 +13,12 @@ const io = socketIo(server, {
 });
 
 // Serve static files
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname));
+
+// Serve index.html on root path
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
 
 // CORS headers
 app.use((req, res, next) => {
